@@ -1,6 +1,28 @@
 function register() {
     const newUsername = document.getElementById('new-username').value.trim();
     const newPassword = document.getElementById('new-password').value.trim();
+     const minLength = 8; // Longitud mínima de la contraseña
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+    const hasSpecialChars = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
+
+    if (password.length < minLength) {
+        return `La contraseña debe tener al menos ${minLength} caracteres.`;
+    }
+    if (!hasUpperCase) {
+        return "La contraseña debe tener al menos una letra mayúscula.";
+    }
+    if (!hasLowerCase) {
+        return "La contraseña debe tener al menos una letra minúscula.";
+    }
+    if (!hasNumbers) {
+        return "La contraseña debe tener al menos un número.";
+    }
+    if (!hasSpecialChars) {
+        return "La contraseña debe tener al menos un carácter especial.";
+    }
+    return null; // Si pasa todas las validaciones, devuelve null
 
     // Validar que los campos no estén vacíos
     if (!newUsername || !newPassword) {
@@ -21,6 +43,7 @@ function register() {
     // Limpiar campos después del registro
     document.getElementById('new-username').value = '';
     document.getElementById('new-password').value = '';
+    
 }
 
 function login() {
