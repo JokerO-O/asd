@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <h2 class="Generador de Contraseña"><span id="color-changing-text">Generador de Contraseña</span></h2>
+    <title>Registro y Login</title>
 </head>
 <body>
-   
     <div id="login-form">
         <h1>Iniciar Sesión</h1>
-        <input type="email" id="login-email" placeholder="Correo Electrónico" required>
-        <input type="password" id="login-password" placeholder="Contraseña" required>
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
         <button onclick="login()">Iniciar Sesión</button>
     </div>
 
@@ -19,14 +18,14 @@
         <h1>Registrar Usuario</h1>
         <input type="text" id="new-username" placeholder="Nuevo Usuario" required>
         <input type="password" id="new-password" placeholder="Nueva Contraseña" required>
-        <input type="email" id="new-email" placeholder="Correo Electrónico" required>
+        <input type="email" id="email" placeholder="Correo Electrónico" required>
         <input type="date" id="dob" placeholder="Fecha de Nacimiento" required>
-        <input type="tel" id="phone" placeholder="Número de Teléfono (RD)" required>
+        <input type="tel" id="phone" placeholder="Teléfono (809, 829, 849)" required>
         <button onclick="register()">Registrar</button>
     </div>
 
     <div id="password-generator" style="display:none;">
-        <h1 class="Generador de Contraseñas"><span id="color-changing-text">Generador de Contraseña</span></h1>
+        <h1>Generador de Contraseña</h1>
         <button onclick="generatePassword()">Generar Contraseña Segura</button>
         <p id="generated-password"></p>
     </div>
